@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#ff6cbdff">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Praias Do Litoral"
+        android:id="@+id/tvTitleDetalheQuiosque"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:background="#fffffe10"
+        android:textColor="#ff2aa5ff" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Quiosque"
+        android:id="@+id/tvSubTitleDetalhesQuiosque"
+        android:layout_below="@+id/tvTitleDetalheQuiosque"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#fffffe10"
+        android:background="#ff2aa5ff" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Número Quiosque"
+        android:id="@+id/tvNumeroQuiosque"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#ff8cff27"
+        android:layout_above="@+id/tvRua"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Rua"
+        android:id="@+id/tvRua"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#ff8cff27"
+        android:layout_above="@+id/tvBairro"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Bairro"
+        android:id="@+id/tvBairro"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="#ff8cff27"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="72dp" />
+
+</RelativeLayout>
