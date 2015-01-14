@@ -1,5 +1,7 @@
 package Models;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,57 +9,32 @@ import java.util.List;
  * Created by enzo on 22/12/2014.
  * Classe modelo dos litorais.
  */
-public class Litoral
+public class Litoral extends Lugar
 {
-    private int id;
-    private String nome;
-    private List<Cidade> cidades;
 
-    public Litoral(int _id, String _nome)
+    public Litoral(int _id, String _nome, String _imageURL, int _qtdCidades)
     {
-        this.id = _id;
-        this.nome = _nome;
-        this.cidades = new ArrayList<Cidade>();
+        super(_id, _nome, _imageURL, _qtdCidades);
     }
 
-    public int getId()
-    {
-        return id;
+    @Override
+    public int getQtd() {
+        return super.getQtd();
     }
 
-    public String getNome()
-    {
-        return nome;
+    @Override
+    public Bitmap getImage() {
+        return super.getImage();
     }
 
-    public List<Cidade> getCidades()
-    {
-        return cidades;
-    }
-
-    public void colocarLista(List<Cidade> _cidades)
-    {
-        this.cidades = _cidades;
-    }
-
-    public void adicionarCidade(Cidade _cidade)
-    {
-        this.cidades.add(_cidade);
-    }
-
-    public Cidade selecionarCidade(int _indice)
-    {
-        return cidades.get(_indice);
-    }
-
-    public void setCidades(List<Cidade> cidades)
-    {
-        this.cidades = cidades;
+    @Override
+    public void setImage(Bitmap image) {
+        super.setImage(image);
     }
 
     @Override
     public String toString()
     {
-        return nome;
+        return super.getNome();
     }
 }

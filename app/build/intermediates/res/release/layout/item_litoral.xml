@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/ivLitoral"
+        android:minWidth="100dp"
+        android:minHeight="75dp"
+        android:maxWidth="100dp"
+        android:maxHeight="75dp"
+        android:background="#ff69ff15"
+        android:adjustViewBounds="true"
+        android:longClickable="false" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/ivLitoral"
+        android:layout_alignBottom="@+id/ivLitoral"
+        android:layout_toRightOf="@+id/ivLitoral">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Nome"
+            android:id="@+id/tvNomeObj"
+            android:textColor="#ff000000"
+            android:textSize="17dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Quantidade"
+            android:id="@+id/tvQuantidadeObj"
+            android:textColor="#ff000000"
+            android:textSize="15dp" />
+    </LinearLayout>
+</RelativeLayout><!-- From: file:/C:/Users/enzo/Documents/GitHub/Praias-do-Litoral/app/src/main/res/layout/item_litoral.xml -->

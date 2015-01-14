@@ -1,62 +1,44 @@
 package Models;
 
+import android.graphics.Bitmap;
+
 import java.util.List;
 
 /**
  * Created by enzo on 22/12/2014.
  */
-public class Cidade
+public class Cidade extends Lugar
 {
-    private int id;
-    private String nome;
-    private String estado;
-    private List<Praia> praias;
+    private String Estado;
 
-    public Cidade(int _id, String _nome, String _estado)
+    public Cidade(int _id, String _nome, String _estado, String _imageURL, int _qtd)
     {
-        this.id = _id;
-        this.nome = _nome;
-        this.estado = _estado;
-    }
-
-    public int getId()
-    {
-        return id;
-    }
-
-    public String getNome()
-    {
-        return nome;
+        super(_id, _nome, _imageURL, _qtd);
+        this.Estado = _estado;
     }
 
     public String getEstado()
     {
-        return estado;
+        return Estado;
     }
 
-    public List<Praia> getPraias()
-    {
-        return praias;
+    @Override
+    public int getID() {
+        return super.getID();
     }
 
-    public void setPraias(List<Praia> praias)
-    {
-        this.praias = praias;
+    @Override
+    public void setImage(Bitmap image) {
+        super.setImage(image);
     }
 
-    public void adicionaPraia(Praia _p)
-    {
-        this.praias.add(_p);
-    }
-
-    public Praia selecionaPraia(int _indice)
-    {
-        return this.praias.get(_indice);
+    public void setEstado(String estado) {
+        this.Estado = estado;
     }
 
     @Override
     public String toString()
     {
-        return nome;
+        return super.getNome();
     }
 }

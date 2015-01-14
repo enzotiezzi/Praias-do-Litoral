@@ -1,53 +1,70 @@
 package Models;
 
+import android.graphics.Bitmap;
+
 /**
  * Created by enzo on 22/12/2014.
  */
-public class Quiosque
+public class Quiosque extends Lugar
 {
-    private int id;
-    private String nome;
-    private int numeroQuiosque;
-    private String rua;
-    private String bairro;
+    private int NumeroQuiosque;
+    private String Rua;
+    private String Bairro;
+    private double Lat;
+    private double Lng;
 
-    public Quiosque(int _id, String _nome, int _numeroQuiosque, String _rua, String _bairro)
+    public Quiosque(int _id, String _nome, int _numeroQuiosque, String _rua, String _bairro, String _imageURL, int _qtd)
     {
-        this.id = _id;
-        this.nome = _nome;
-        this.numeroQuiosque = _numeroQuiosque;
-        this.rua = _rua;
-        this.bairro = _bairro;
-    }
-
-    public int getId()
-    {
-        return id;
-    }
-
-    public String getNome()
-    {
-        return nome;
+        super(_id, _nome, _imageURL, _qtd);
+        this.NumeroQuiosque = _numeroQuiosque;
+        this.Rua = _rua;
+        this.Bairro = _bairro;
     }
 
     public int getNumeroQuiosque()
     {
-        return numeroQuiosque;
+        return NumeroQuiosque;
     }
 
     public String getBairro()
     {
-        return bairro;
+        return Bairro;
     }
 
     public String getRua()
     {
-        return rua;
+        return Rua;
+    }
+
+    @Override
+    public int getID() {
+        return super.getID();
+    }
+
+    public double getLat() {
+        return Lat;
+    }
+
+    public double getLng() {
+        return Lng;
+    }
+
+    public void setLat(double lat) {
+        this.Lat = lat;
+    }
+
+    public void setLng(double lng) {
+        this.Lng = lng;
+    }
+
+    @Override
+    public void setImage(Bitmap image) {
+        super.setImage(image);
     }
 
     @Override
     public String toString()
     {
-        return this.nome;
+        return super.getNome();
     }
 }

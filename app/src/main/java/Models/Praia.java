@@ -1,66 +1,38 @@
 package Models;
 
-import java.util.List;
+import android.graphics.Bitmap;
 
 /**
  * Created by enzo on 22/12/2014.
  */
-public class Praia
+public class Praia extends Lugar
 {
-    private int id;
-    private int idCidade;
-    private String nome;
-    private String estado;
-    private String cidade;
-    private List<Quiosque> quioesques;
+    private int IDCidade;
 
-    public Praia(int _id, int _idCidade, String _nome, String _estado, String _cidade)
+    public Praia(int _id, int _idCidade, String _nome, String _estado, String _cidade, String _imageURL, int _qtd)
     {
-        this.id = _id;
-        this.idCidade = _idCidade;
-        this.nome = _nome;
-        this.estado = _estado;
-        this.cidade = _cidade;
+        super(_id, _nome, _imageURL, _qtd);
+        this.IDCidade = _idCidade;
     }
 
-    public String getNome()
-    {
-        return nome;
+
+    public int getIDCidade() {
+        return IDCidade;
     }
 
-    public String getCidade()
-    {
-        return cidade;
+    @Override
+    public int getID() {
+        return super.getID();
     }
 
-    public String getEstado()
-    {
-        return estado;
-    }
-
-    public List<Quiosque> getQuioesques()
-    {
-        return quioesques;
-    }
-
-    public int getId()
-    {
-        return id;
-    }
-
-    public int getIdCidade()
-    {
-        return idCidade;
-    }
-
-    public void setQuioesques(List<Quiosque> quioesques)
-    {
-        this.quioesques = quioesques;
+    @Override
+    public void setImage(Bitmap image) {
+        super.setImage(image);
     }
 
     @Override
     public String toString()
     {
-        return this.nome;
+        return super.getNome();
     }
 }

@@ -1,12 +1,14 @@
 package com.example.praiasdolitoral.ViewActivities;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.praiasdolitoral.R;
 
-import Controllers.ControllerQuiosque;
+import Controllers.Requisition;
 import Models.Quiosque;
 
 /**
@@ -18,22 +20,40 @@ public class DetalhesQuiosqueActivity extends Activity
     private TextView tvRua;
     private TextView tvBairro;
     private TextView tvNumeroQuiosque;
+    private ImageView ivQuiosque;
+    private Activity thisActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_quiosque);
 
+        this.thisActivity = this;
+
         tvSubTitleDetalhesQuiosque = (TextView) findViewById(R.id.tvSubTitleDetalhesQuiosque);
         tvBairro = (TextView) findViewById(R.id.tvBairro);
         tvRua = (TextView) findViewById(R.id.tvRua);
         tvNumeroQuiosque = (TextView) findViewById(R.id.tvNumeroQuiosque);
+        ivQuiosque = (ImageView)findViewById(R.id.ivQuiosque);
 
-        Quiosque _q = ControllerQuiosque.carregaQuiosque(getApplicationContext(), getIntent());
+        tvSubTitleDetalhesQuiosque.setText(getIntent().getStringExtra("nome"));
+        tvNumeroQuiosque.setText(String.valueOf(getIntent().getIntExtra("numeroQuiosque", -1)));
+        tvRua.setText(getIntent().getStringExtra("rua"));
+        tvBairro.setText(getIntent().getStringExtra("bairro"));
 
-        tvSubTitleDetalhesQuiosque.setText(_q.getNome());
-        tvNumeroQuiosque.setText("Número do Quiosque: " + String.valueOf(_q.getNumeroQuiosque()));
-        tvRua.setText("Rua: " + _q.getRua());
-        tvBairro.setText("Bairro: " + _q.getBairro());
+        int id = getIntent().getIntExtra("id", -1);
+        String url = "http://www.contasuahistoria.somee.com/Services/Praias/GHRetornaImageURL.ashx?id="+id;
+
+        Requisition.sendRequisition(new Requisition.OnRequisitionCallback() {
+            @Override
+            public void finishedRequisition(int status, Object object, Exception e)
+            {
+                if (status == 200)
+                {
+                    Bitmap image = (Bitmap) object;
+                    ivQuiosque.setImageBitmap(image);
+                }
+            }
+        }, url, "GET", null, thisActivity, String.class);
     }
 }

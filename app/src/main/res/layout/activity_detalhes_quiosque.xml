@@ -69,4 +69,16 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="72dp" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ivQuiosque"
+        android:minHeight="240dp"
+        android:minWidth="320dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:maxWidth="320dp"
+        android:maxHeight="240dp" />
+
 </RelativeLayout>
